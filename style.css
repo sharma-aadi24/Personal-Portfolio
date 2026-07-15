@@ -8,11 +8,29 @@ html,body{
     width: 100%;
     height: 100%;
 }
+#minicircle{
+    width: 10px;
+height:10px ;
+position: absolute;
+background-color: #fff;
+border-radius: 50%;
+z-index: 9999999999;
+transition: all cubic-bezier(0.19,1,0.22,1) 1s;
+}
+
+.bounding{
+    width: fit-content;
+    overflow: hidden;
+}
+.bounding .boundingelem{
+    transform: translateY(100%);
+}
 #main{
     width: 100%;
     background-color: black;
 }
 #landingpage{
+    position: relative;
     height: 100vh;
     width: 100%;
     background-color: black;
@@ -103,7 +121,7 @@ html,body{
     padding-top: 200px;
     background-color: black;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 }
 .element{
     position: relative;
@@ -134,10 +152,11 @@ html,body{
     color: #fff;
     align-items: center;
     padding: 10vw 10vw ;
-    padding-left: 40vw;
+    padding-left: 25vw;
     width: 100%;
     gap: 50px;
     background-color: black;
+    opacity: 1;
 }
 #abouttext{
     width: 25rem;
@@ -168,9 +187,10 @@ html,body{
     padding: 20px 30px;
     padding-bottom: 7vw;
 }
-#connect h5{
-    text-transform: uppercase;
-    opacity: 0.6;
+#connect  a{
+    
+    
+    color: #fff;
 }
 #connect h3{
     text-transform: uppercase;
