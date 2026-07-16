@@ -73,6 +73,7 @@ transition: all cubic-bezier(0.19,1,0.22,1) 1s;
     text-transform: uppercase;
     font-size: 15px;
     text-align: right;
+    margin-top: 20px;
 }
 #small-heading{
     display: flex;
