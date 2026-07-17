@@ -18,7 +18,7 @@ function circleSkewOnMovement(){
         Xprevious=dets.clientX;
 
         Yprevious=dets.clientY;
-        // convert to range
+        // convert to range---> clamp function
 
 
 
@@ -72,14 +72,48 @@ firstPageAnim();
 
 
 document.querySelectorAll('.element').forEach(function(element){
+    var Rotate=0;
+    var diffForRotate=0;
+
+
+  element.addEventListener("mouseleave", function (dets) {
+    gsap.to(element.querySelector("img"), {
+      opacity: 0,
+      ease: "power3.out" ,
+      duration: 0.5,
+    });
+  });
+
+
     element.addEventListener("mousemove",function(details){
 
+
+// to get details of position of  any element = getBoundingClientRect
+
+
+
+            diffForRotate=details.clientX-Rotate;
+            Rotate=details.clientX;
+
+
+
+        var completeMouseDistance=details.clientY;
+        var TopElementDistance=element.getBoundingClientRect().top;
+
+        var ImageTopDistance= completeMouseDistance-TopElementDistance;
+       
+
+
+        
 
 
         gsap.to(element.querySelector('img'),
     {
         opacity:1,
         ease: "power1.out",
+        top:ImageTopDistance,
+        left:details.clientX,
+        rotate:gsap.utils.clamp(-20,20,diffForRotate),
 
     })
        details.clientX;
@@ -87,6 +121,9 @@ document.querySelectorAll('.element').forEach(function(element){
          
     })
 })
+
+
+
 
 
 

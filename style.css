@@ -144,9 +144,10 @@ transition: all cubic-bezier(0.19,1,0.22,1) 1s;
 }
 .element img{
     height: 140%;
-    display: none;
+    opacity: 0;
     z-index: 999;
     position: absolute;
+    transition: opacity 0.3s ease;
 }
 #about{
     display: flex;
